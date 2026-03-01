@@ -11,14 +11,15 @@
     :root { --dark: #0f1117; --accent: #0ea5e9; --accent-dark: #0284c7; --bg: #f4f6f9; --muted: #6b7280; --card: #ffffff; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 0 2.5rem; height: 60px; background: rgba(244,246,249,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .nav-logo { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.03em; color: var(--dark); text-decoration: none; }
+    nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 2.5rem; height: 60px; background: rgba(244,246,249,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-logo { justify-self: start; font-size: 1.1rem; font-weight: 900; letter-spacing: -0.03em; color: var(--dark); text-decoration: none; }
     .nav-logo span { color: var(--accent); }
+    .nav-right { justify-self: end; }
     .nav-links { display: flex; align-items: center; gap: 1.75rem; }
     .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.15s; }
     .nav-links a:hover { color: var(--dark); }
     .nav-cta { background: var(--dark); color: #fff; padding: 0.5rem 1.1rem; border-radius: 7px; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
-    @media (max-width: 640px) { .nav-links { display: none; } }
+    @media (max-width: 640px) { nav { grid-template-columns: 1fr auto; } .nav-links { display: none; } }
     .hero { min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, #e8f4fb 0%, var(--bg) 60%); }
     .hero-badge { display: inline-block; background: #e0f2fe; color: var(--accent-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 99px; margin-bottom: 1.5rem; }
     .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; max-width: 780px; margin-bottom: 1.25rem; }
@@ -66,20 +67,22 @@
 </head>
 <body>
   <nav>
-    <a href="/" class="nav-logo">IC<span>.</span></a>
+    <a href="/" class="nav-logo">IC Refrigeration</a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
       <a href="#area">Service Area</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="tel:2095388271" class="nav-cta">Call Now</a>
+    <div class="nav-right">
+      <a href="tel:2095388271" class="nav-cta">Call Now</a>
+    </div>
   </nav>
 
   <section class="hero">
     <div class="hero-badge">Serving Northern California Since 1940</div>
-    <h1>Heating, Cooling &amp;<br /><em>Refrigeration</em> Done Right.</h1>
-    <p>Family-owned for over 80 years. Commercial and residential HVAC, refrigeration, fire protection, and custom fabrication.</p>
+    <h1>Ceres-Based HVAC, Fire Protection &amp;<br /><em>Refrigeration</em> Since 1940.</h1>
+    <p>Family-owned in the Central Valley for 80+ years, with service teams for residential and commercial HVAC, refrigeration, fire protection, and custom metal fabrication.</p>
     <div class="hero-actions">
       <a href="tel:2095388271" class="btn-primary">Call 209-538-8271</a>
       <a href="#services" class="btn-ghost">See Our Services</a>
@@ -95,28 +98,28 @@
 
   <section class="section" id="services">
     <p class="section-label">What We Do</p>
-    <h2>One call covers it all.</h2>
-    <p class="section-desc">From commercial refrigeration to residential AC to fire suppression — IC handles it all, and has for over 80 years.</p>
+    <h2>Built in refrigeration. Expanded for full HVACR service.</h2>
+    <p class="section-desc">IC started in dairy refrigeration and now supports homes, restaurants, and commercial facilities across Northern California.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">❄️</div>
         <h3>Commercial Refrigeration</h3>
-        <p>Walk-in coolers, reach-in units, display cases. We service, repair, and install for restaurants, grocers, and food service operations.</p>
+        <p>Walk-ins, reach-ins, and display cases for restaurants and food service operators. Service, repair, and installation by experienced HVACR techs.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🌡️</div>
         <h3>Heating &amp; Air Conditioning</h3>
-        <p>Residential and commercial HVAC. Installations, repairs, and our Clean &amp; Check maintenance program.</p>
+        <p>Residential and commercial heating and air conditioning, including installation, repair, and scheduled Clean &amp; Check maintenance.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🔥</div>
         <h3>Fire Protection</h3>
-        <p>Commercial fire suppression system installation and service. Stay code-compliant with IC's certified technicians.</p>
+        <p>Commercial fire protection for restaurant and facility systems, including installation and ongoing service to support compliance and safety.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🔧</div>
         <h3>Custom Fabrication</h3>
-        <p>IC fabricates custom refrigeration and HVAC components for commercial and industrial applications.</p>
+        <p>Custom sheet metal and component fabrication for refrigeration and HVAC applications in commercial and industrial environments.</p>
       </div>
     </div>
   </section>
@@ -124,7 +127,7 @@
   <section class="reviews-section" id="reviews">
     <div class="reviews-inner">
       <p class="section-label">What People Say</p>
-      <h2>No competition for hundreds of miles.</h2>
+      <h2>Customer reviews from across Northern California.</h2>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
@@ -133,12 +136,12 @@
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"We were told we needed a $20,000–$38,000 replacement unit. IC Refrigeration was our second opinion and the total came to about $200. Found an honest and reliable company."</p>
+          <p class="review-text">"We were told we needed a $20,000-$38,000 replacement unit from another company. I am so happy to say that IC Refrigeration was our second opinion and the total came to about $200. They fixed the problem and never once have the sales pitch runaround. I found an honest and reliable company."</p>
           <div class="review-author">Amanda Moore</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"I called IC once and have had no issues since. Very knowledgeable. Will definitely recommend to my friends and family."</p>
+          <p class="review-text">"Thank you for fixing my reach in refrigerator! I was having issues with it for about 6 months and I kept paying a guy to come out to keep \"fixing\" it and it still had issues. I called IC once and I have had no issues since. Very knowledgeable about the products. Will definitely recommend to my friends and family."</p>
           <div class="review-author">Shilo Mcclay</div>
         </div>
       </div>
@@ -148,8 +151,8 @@
   <section class="area-section" id="area">
     <div class="area-inner">
       <p class="section-label">Service Area</p>
-      <h2>All of Northern California.</h2>
-      <p style="color:var(--muted);font-size:1rem;margin-top:0.5rem;">From the Central Valley to the Bay Area — we come to you.</p>
+      <h2>Serving the Central Valley, Bay Area, and beyond.</h2>
+      <p style="color:var(--muted);font-size:1rem;margin-top:0.5rem;">Headquartered in Ceres, with crews covering Northern California service calls.</p>
       <div class="area-grid">
         <span class="area-tag">Modesto</span><span class="area-tag">Ceres</span><span class="area-tag">Turlock</span>
         <span class="area-tag">Fresno</span><span class="area-tag">Merced</span><span class="area-tag">Stockton</span>
@@ -165,8 +168,8 @@
   </section>
 
   <section class="cta-section" id="contact">
-    <h2>Need service? We answer the phone.</h2>
-    <p>Over 80 years serving Northern California. Call us — we get back to you fast.</p>
+    <h2>Need HVACR service? Call IC directly.</h2>
+    <p>Speak with the IC Refrigeration team at 209-538-8271 or email ksilva@icrefrigeration.com.</p>
     <div class="cta-btns">
       <a href="tel:2095388271" class="btn-primary">Call 209-538-8271</a>
       <a href="mailto:ksilva@icrefrigeration.com" class="btn-ghost">Send a Message</a>
@@ -175,7 +178,7 @@
 
   <footer>
     <div>IC Refrigeration &nbsp;&middot;&nbsp; Ceres, CA &nbsp;&middot;&nbsp; Serving NorCal Since 1940</div>
-    <div><a href="tel:2095388271">209-538-8271</a></div>
+    <div><a href="tel:2095388271">209-538-8271</a> &nbsp;&middot;&nbsp; <a href="mailto:ksilva@icrefrigeration.com">ksilva@icrefrigeration.com</a></div>
   </footer>
 </body>
 </html>

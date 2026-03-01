@@ -1,0 +1,12 @@
+name = "kyros-demos-worker"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[[r2_buckets]]
+binding = "DEMOS_BUCKET"
+bucket_name = "kyros-demos"
+
+routes = [
+  { pattern = "demo-*.kyrosdirect.com/*", zone_name = "kyrosdirect.com" },
+  { pattern = "demo-*.kyrosdirect.com", zone_name = "kyrosdirect.com" }
+]
