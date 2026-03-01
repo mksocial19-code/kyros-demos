@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IC Refrigeration — Heating, Cooling & Refrigeration | Northern California</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --dark: #0f1117; --accent: #0ea5e9; --accent-dark: #0284c7; --bg: #f4f6f9; --muted: #6b7280; --card: #ffffff; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 0 2.5rem; height: 60px; background: rgba(244,246,249,0.96); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-logo { font-size: 1.1rem; font-weight: 900; letter-spacing: -0.03em; color: var(--dark); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-cta { background: var(--dark); color: #fff; padding: 0.5rem 1.1rem; border-radius: 7px; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+    .hero { min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(160deg, #e8f4fb 0%, var(--bg) 60%); }
+    .hero-badge { display: inline-block; background: #e0f2fe; color: var(--accent-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 99px; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; max-width: 780px; margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 520px; line-height: 1.65; margin-bottom: 2rem; }
+    .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary { background: var(--dark); color: #fff; padding: 0.75rem 1.6rem; border-radius: 8px; font-size: 0.95rem; font-weight: 700; text-decoration: none; }
+    .btn-ghost { background: transparent; color: var(--dark); padding: 0.75rem 1.6rem; border-radius: 8px; font-size: 0.95rem; font-weight: 600; border: 1.5px solid rgba(0,0,0,0.15); text-decoration: none; }
+    .stats-bar { background: var(--dark); color: #fff; display: grid; grid-template-columns: repeat(4, 1fr); padding: 2rem 3rem; gap: 1rem; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; letter-spacing: -0.04em; }
+    .stat-label { font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+    @media (max-width: 640px) { .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 1.5rem; } }
+    .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .section h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 0.75rem; }
+    .section-desc { color: var(--muted); font-size: 1rem; line-height: 1.65; max-width: 540px; margin-bottom: 2.5rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+    .service-card { background: var(--card); border-radius: 14px; padding: 1.75rem; border: 1px solid rgba(0,0,0,0.07); }
+    .service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .reviews-section { background: var(--dark); padding: 5rem 2rem; }
+    .reviews-inner { max-width: 1100px; margin: 0 auto; }
+    .reviews-section .section-label { color: var(--accent); }
+    .reviews-section h2 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 2.5rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .review-card { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 1.75rem; border: 1px solid rgba(255,255,255,0.08); }
+    .review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.4); }
+    .area-section { padding: 5rem 2rem; background: #fff; }
+    .area-inner { max-width: 1100px; margin: 0 auto; }
+    .area-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .area-tag { background: var(--bg); border: 1px solid rgba(0,0,0,0.08); border-radius: 6px; padding: 0.35rem 0.75rem; font-size: 0.8rem; font-weight: 500; color: var(--muted); }
+    .cta-section { padding: 6rem 2rem; text-align: center; background: linear-gradient(160deg, #e8f4fb 0%, var(--bg) 100%); }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 0.75rem; }
+    .cta-section p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+    .cta-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .map-embed { margin-top: 2rem; border-radius: 14px; overflow: hidden; border: 1px solid rgba(0,0,0,0.07); }
+    .map-embed iframe { width: 100%; height: 300px; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">IC<span>.</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:2095388271" class="nav-cta">Call Now</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">Serving Northern California Since 1940</div>
+    <h1>Heating, Cooling &amp;<br /><em>Refrigeration</em> Done Right.</h1>
+    <p>Family-owned for over 80 years. Commercial and residential HVAC, refrigeration, fire protection, and custom fabrication.</p>
+    <div class="hero-actions">
+      <a href="tel:2095388271" class="btn-primary">Call 209-538-8271</a>
+      <a href="#services" class="btn-ghost">See Our Services</a>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">80+</div><div class="stat-label">Years in Business</div></div>
+    <div class="stat"><div class="stat-num">1940</div><div class="stat-label">Founded</div></div>
+    <div class="stat"><div class="stat-num">NorCal</div><div class="stat-label">Service Area</div></div>
+    <div class="stat"><div class="stat-num">5 Star</div><div class="stat-label">Reviews</div></div>
+  </div>
+
+  <section class="section" id="services">
+    <p class="section-label">What We Do</p>
+    <h2>One call covers it all.</h2>
+    <p class="section-desc">From commercial refrigeration to residential AC to fire suppression — IC handles it all, and has for over 80 years.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>Commercial Refrigeration</h3>
+        <p>Walk-in coolers, reach-in units, display cases. We service, repair, and install for restaurants, grocers, and food service operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌡️</div>
+        <h3>Heating &amp; Air Conditioning</h3>
+        <p>Residential and commercial HVAC. Installations, repairs, and our Clean &amp; Check maintenance program.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3>Fire Protection</h3>
+        <p>Commercial fire suppression system installation and service. Stay code-compliant with IC's certified technicians.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Custom Fabrication</h3>
+        <p>IC fabricates custom refrigeration and HVAC components for commercial and industrial applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section" id="reviews">
+    <div class="reviews-inner">
+      <p class="section-label">What People Say</p>
+      <h2>No competition for hundreds of miles.</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"IC Refrigeration has no competition for hundreds of miles. Their facility, staff, professionalism, integrity, knowledge and fair pricing sets them apart from any and all local competitors."</p>
+          <div class="review-author">Troy Hutchinson</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"We were told we needed a $20,000–$38,000 replacement unit. IC Refrigeration was our second opinion and the total came to about $200. Found an honest and reliable company."</p>
+          <div class="review-author">Amanda Moore</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I called IC once and have had no issues since. Very knowledgeable. Will definitely recommend to my friends and family."</p>
+          <div class="review-author">Shilo Mcclay</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-section" id="area">
+    <div class="area-inner">
+      <p class="section-label">Service Area</p>
+      <h2>All of Northern California.</h2>
+      <p style="color:var(--muted);font-size:1rem;margin-top:0.5rem;">From the Central Valley to the Bay Area — we come to you.</p>
+      <div class="area-grid">
+        <span class="area-tag">Modesto</span><span class="area-tag">Ceres</span><span class="area-tag">Turlock</span>
+        <span class="area-tag">Fresno</span><span class="area-tag">Merced</span><span class="area-tag">Stockton</span>
+        <span class="area-tag">Sacramento</span><span class="area-tag">San Francisco</span><span class="area-tag">San Jose</span>
+        <span class="area-tag">Oakland</span><span class="area-tag">Bakersfield</span><span class="area-tag">Redding</span>
+        <span class="area-tag">Santa Clara</span><span class="area-tag">Palo Alto</span><span class="area-tag">Monterey</span>
+        <span class="area-tag">Chico</span><span class="area-tag">Concord</span><span class="area-tag">Pleasanton</span>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d403715!2d-121.2!3d37.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809053c0de0e8399%3A0x5a9d6a1de4!2sCentral%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <h2>Need service? We answer the phone.</h2>
+    <p>Over 80 years serving Northern California. Call us — we get back to you fast.</p>
+    <div class="cta-btns">
+      <a href="tel:2095388271" class="btn-primary">Call 209-538-8271</a>
+      <a href="mailto:ksilva@icrefrigeration.com" class="btn-ghost">Send a Message</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>IC Refrigeration &nbsp;&middot;&nbsp; Ceres, CA &nbsp;&middot;&nbsp; Serving NorCal Since 1940</div>
+    <div><a href="tel:2095388271">209-538-8271</a></div>
+  </footer>
+</body>
+</html>
