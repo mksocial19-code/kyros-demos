@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NW Passage | Adventure Travel Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #0f1117;
+      --accent: #d97706;
+      --accent-dark: #b45309;
+      --bg: #f6f5f2;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--dark); }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(246,245,242,0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-cta {
+      background: var(--dark);
+      color: #fff;
+      padding: 0.5rem 1.1rem;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(160deg, #fef3c7 0%, var(--bg) 60%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: #ffedd5;
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      max-width: 860px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--dark);
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(0,0,0,0.18);
+      text-decoration: none;
+    }
+
+    .stats-bar {
+      background: var(--dark);
+      color: #fff;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 2rem 3rem;
+      gap: 1rem;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; letter-spacing: -0.04em; }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 640px) { .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 1.5rem; } }
+
+    .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.07);
+    }
+    .service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .service-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+    .reviews-section { background: var(--dark); padding: 5rem 2rem; }
+    .reviews-inner { max-width: 1100px; margin: 0 auto; }
+    .reviews-section .section-label { color: var(--accent); }
+    .reviews-section h2 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 2.5rem;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .review-stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.9rem; color: rgba(255,255,255,0.74); line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.45); }
+
+    .area-section { padding: 5rem 2rem; background: #fff; }
+    .area-inner { max-width: 1100px; margin: 0 auto; }
+    .area-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .area-tag {
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .cta-section {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(160deg, #fef3c7 0%, var(--bg) 100%);
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+    }
+    .cta-section p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+    .cta-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.45);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-logo">NW<span>.</span> Passage</a>
+    <div class="nav-links">
+      <a href="#trips">Trips</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="tel:18007327328" class="nav-cta">800-RECREATE</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">Since 1984 • 40+ Years of Expertise</div>
+    <h1>Adventure travel built for people who want <em>real experiences</em>, not package tours.</h1>
+    <p>NW Passage designs active adventures across iconic destinations, with guided journeys for hikers, paddlers, climbers, families, and youth groups.</p>
+    <div class="hero-actions">
+      <a href="mailto:info@nwpassage.com" class="btn-primary">Book a Trip</a>
+      <a href="#trips" class="btn-ghost">See Trips</a>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">1984</div><div class="stat-label">Established</div></div>
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years of Expertise</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Adventure Types</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">Destination Regions</div></div>
+  </div>
+
+  <section class="section" id="trips">
+    <p class="section-label">Trip Styles</p>
+    <h2>Adventure formats from NW Passage's current offerings.</h2>
+    <p class="section-desc">From the current activities lineup: Backpacking Adventures, Camping Adventures, Family Adventures, Hike, Kayak, Multi-Sport Adventures, Rock Climb, SUP, and Youth Camps.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🥾</div>
+        <h3>Backpacking Adventures</h3>
+        <p>Guided backcountry itineraries focused on trail mileage, camp logistics, and immersive wilderness travel.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⛺</div>
+        <h3>Camping Adventures</h3>
+        <p>Basecamp and mobile-camp experiences for travelers who want active days and comfortable nights outdoors.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚣</div>
+        <h3>Multi-Sport Adventures</h3>
+        <p>Trips combining activities like hiking, kayaking, and paddling for broader exploration in one itinerary.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👨‍👩‍👧‍👦</div>
+        <h3>Family Adventures</h3>
+        <p>Adventure-first departures designed for mixed ages, balancing challenge with shared discovery and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section" id="reviews">
+    <div class="reviews-inner">
+      <p class="section-label">What Travelers Say</p>
+      <h2>Real feedback from NW Passage guests.</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Really enjoyed all aspects of the trip, but especially all the kayaking. Accommodations were excellent and in beautiful settings. The trip leaders were so knowledgeable and friendly. We had all our needs met and then some."</p>
+          <div class="review-author">Dianne F, Kayak Crete</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"This was by far our best vacation ever! We were apprehensive as this was our first group trip experience, but our trip guides put us at ease right away. They made us feel safe and cared for at all times and made this a truly unforgettable experience."</p>
+          <div class="review-author">Cindy B, Greek Islands Multi-Sport</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Words can't describe our incredible honeymoon in Greece. We wanted to immerse ourselves in Greek culture and this trip perfectly exceeded all expectations. The trip leaders made our experience with endless accommodations and adventures unforgettable."</p>
+          <div class="review-author">Brittany A, Greek Islands Multi-Sport</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-section" id="destinations">
+    <div class="area-inner">
+      <p class="section-label">Destinations</p>
+      <h2>Where NW Passage currently runs adventures.</h2>
+      <p style="color:var(--muted);font-size:1rem;margin-top:0.5rem;">Destination regions listed on nwpassage.com.</p>
+      <div class="area-grid">
+        <span class="area-tag">Africa</span>
+        <span class="area-tag">Caribbean</span>
+        <span class="area-tag">Chicagoland</span>
+        <span class="area-tag">Galapagos Islands</span>
+        <span class="area-tag">Greek Islands</span>
+        <span class="area-tag">Crete</span>
+        <span class="area-tag">Italy</span>
+        <span class="area-tag">North America</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <h2>Ready to plan your next adventure?</h2>
+    <p>Call NW Passage at 800-RECREATE or email the team to talk through dates, destinations, and trip style.</p>
+    <div class="cta-btns">
+      <a href="tel:18007327328" class="btn-primary">Call 800-732-7328</a>
+      <a href="mailto:info@nwpassage.com" class="btn-ghost">Email info@nwpassage.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>NW Passage Adventure Travel • Since 1984 • Adventure Travel Experiences</div>
+    <div><a href="https://www.nwpassage.com/" target="_blank" rel="noopener noreferrer">nwpassage.com</a> • <a href="tel:18007327328">800-732-7328</a></div>
+  </footer>
+</body>
+</html>
