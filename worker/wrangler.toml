@@ -1,6 +1,7 @@
 name = "kyros-demos-worker"
 main = "worker.js"
 compatibility_date = "2025-01-01"
+account_id = "4b16628f7816c9e5d01dc9a4392078b5"
 
 [[r2_buckets]]
 binding = "DEMOS_BUCKET"
