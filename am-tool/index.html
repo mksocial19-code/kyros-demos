@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&M Tool Inc. — Precision CNC Machining | Mills River, NC</title>
+<meta name="description" content="A&M Tool Inc. is a family-owned precision CNC machining shop in Mills River, NC serving aerospace, defense, medical, and industrial clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #0D0D0D;
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+  --text: #111111;
+  --body: #6B6B6B;
+  --muted: #AAAAAA;
+  --divider: #E0E0E0;
+  --radius-pill: 999px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--body);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.btn--primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--dark);
+  color: var(--white);
+  border: 2px solid var(--dark);
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.btn--primary:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+.btn--ghost:hover {
+  background: var(--white);
+  color: var(--dark);
+  transform: translateY(-1px);
+}
+
+.btn--ghost--dark {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+.btn--ghost--dark:hover {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* ───── NAV ───── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--divider);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav__logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.nav__logo span {
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav__links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--body);
+  transition: color 0.2s;
+}
+
+.nav__links a:hover {
+  color: var(--text);
+}
+
+.nav__cta {
+  padding: 10px 24px !important;
+  font-size: 0.85rem !important;
+}
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav__mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--divider);
+  padding: 24px 0;
+  z-index: 999;
+}
+
+.nav__mobile.active {
+  display: block;
+}
+
+.nav__mobile a {
+  display: block;
+  padding: 12px 48px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--body);
+  transition: color 0.2s;
+}
+
+.nav__mobile a:hover {
+  color: var(--text);
+}
+
+.nav__mobile .btn--primary {
+  margin: 16px 48px 0;
+}
+
+/* ───── HERO ───── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--dark);
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__headline {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero__sub {
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ───── STATS ───── */
+.stats {
+  padding: 100px 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--divider);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.stats__numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.stat-item__value {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-item__label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stats__card {
+  background: var(--dark);
+  border-radius: 10px;
+  padding: 48px 40px;
+}
+
+.stats__card .eyebrow {
+  color: var(--muted);
+}
+
+.stats__card h3 {
+  color: var(--white);
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.stats__card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.stats__services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stats__services-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.stats__services-list li:last-child {
+  border-bottom: none;
+}
+
+.stats__services-list svg {
+  flex-shrink: 0;
+}
+
+/* ───── SERVICES ───── */
+.services {
+  padding: 100px 0;
+  background: var(--light);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 64px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--body);
+  line-height: 1.6;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 40px 32px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--divider);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.service-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--body);
+}
+
+/* ───── INDUSTRIES ───── */
+.industries {
+  padding: 100px 0;
+  background: var(--dark);
+}
+
+.industries .eyebrow,
+.industries .section-header p {
+  color: var(--muted);
+}
+
+.industries .section-header h2 {
+  color: var(--white);
+}
+
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.industry-card {
+  text-align: center;
+  padding: 48px 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.industry-card:hover {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.03);
+}
+
+.industry-card__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  color: var(--white);
+}
+
+.industry-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.industry-card h3 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.industry-card p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ───── ABOUT ───── */
+.about {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about__text h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.about__text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: var(--body);
+}
+
+.about__card {
+  background: var(--dark);
+  border-radius: 10px;
+  padding: 48px 40px;
+}
+
+.about__card h3 {
+  color: var(--white);
+  font-size: 1.35rem;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.about__card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__card li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.about__card li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ───── CONTACT ───── */
+.contact {
+  padding: 100px 0;
+  background: var(--light);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contact__info h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.contact__info > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--body);
+  margin-bottom: 40px;
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact__detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--text);
+}
+
+.contact__detail-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.contact__detail-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.contact__form {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 48px 40px;
+  border: 1px solid var(--divider);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--light);
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--dark);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact__form .btn--primary {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* ───── FOOTER ───── */
+.footer {
+  background: var(--dark);
+  padding: 60px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__brand {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer__info span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 1024px) {
+  .stats__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stats__services-list {
+    grid-column: 1 / -1;
+  }
+  .industries__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 140px 0 80px;
+  }
+
+  .hero__headline {
+    font-size: 2.2rem;
+  }
+
+  .hero__sub {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn--primary,
+  .hero__actions .btn--ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats {
+    padding: 64px 0;
+  }
+
+  .stats__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats__numbers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .services {
+    padding: 64px 0;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industries {
+    padding: 64px 0;
+  }
+
+  .industries__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .about {
+    padding: 64px 0;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact {
+    padding: 64px 0;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__info {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .industries__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats__numbers {
+    flex-direction: column;
+  }
+
+  .contact__form {
+    padding: 32px 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ───── NAV ───── -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo">A&M Tool<span>Inc.</span></a>
+    <div class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn--primary nav__cta">Get a Quote <span>&rarr;</span></a>
+    </div>
+    <button class="nav__hamburger" onclick="document.querySelector('.nav__mobile').classList.toggle('active')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile">
+    <a href="#services" onclick="this.parentElement.classList.remove('active')">Services</a>
+    <a href="#industries" onclick="this.parentElement.classList.remove('active')">Industries</a>
+    <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
+    <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+    <a href="#contact" class="btn--primary nav__cta" onclick="this.parentElement.classList.remove('active')">Get a Quote <span>&rarr;</span></a>
+  </div>
+</nav>
+
+<!-- ───── HERO ───── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <p class="eyebrow">Precision Through Technology</p>
+      <h1 class="hero__headline">Precision Machining.<br>Delivered on Spec.</h1>
+      <p class="hero__sub">A&M Tool has served aerospace, defense, and industrial clients for decades — with the tolerances and turnaround your project demands.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn--primary">Request a Quote <span>&rarr;</span></a>
+        <a href="#services" class="btn--ghost">View Capabilities</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── STATS ───── -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__numbers">
+        <div class="stat-item">
+          <div class="stat-item__value">&plusmn;0.0001"</div>
+          <div class="stat-item__label">Tolerance</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value">30+</div>
+          <div class="stat-item__label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__value">500+</div>
+          <div class="stat-item__label">Parts / Month</div>
+        </div>
+      </div>
+      <div class="stats__card">
+        <p class="eyebrow">Who We Are</p>
+        <h3>Family-Owned. Built on Integrity.</h3>
+        <p>A&M Tool Inc. is a family-owned precision CNC machining shop in Mills River, North Carolina. Our shared work ethic, integrity, and high standards have built a strong reputation for exceeding expectations across every project we take on.</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:24px;">Core Capabilities</p>
+        <ul class="stats__services-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            CNC Milling
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            CNC Turning
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            5-Axis Machining
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Precision Grinding
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            CMM Inspection
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            Custom Fabrication
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── SERVICES ───── -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">What We Do</p>
+      <h2>End-to-End Machining Capabilities</h2>
+      <p>From prototype to production, we deliver precision parts with tight tolerances and fast turnaround.</p>
+    </div>
+    <div class="services__grid">
+      <!-- CNC Milling -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="8" width="32" height="32" rx="3"/>
+            <line x1="8" y1="20" x2="40" y2="20"/>
+            <line x1="8" y1="32" x2="40" y2="32"/>
+            <line x1="20" y1="8" x2="20" y2="40"/>
+            <line x1="32" y1="8" x2="32" y2="40"/>
+          </svg>
+        </div>
+        <h3>CNC Milling</h3>
+        <p>High-precision 3-axis and multi-axis milling for complex geometries in aluminum, steel, titanium, and exotic alloys.</p>
+      </div>
+      <!-- CNC Turning -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"/>
+            <circle cx="24" cy="24" r="8"/>
+            <circle cx="24" cy="24" r="2"/>
+            <line x1="24" y1="8" x2="24" y2="4"/>
+            <line x1="24" y1="44" x2="24" y2="40"/>
+          </svg>
+        </div>
+        <h3>CNC Turning</h3>
+        <p>Precision lathe work for shafts, bushings, and cylindrical components with tolerances down to tenths.</p>
+      </div>
+      <!-- 5-Axis Machining -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 4L40 14V34L24 44L8 34V14L24 4Z"/>
+            <line x1="24" y1="4" x2="24" y2="44"/>
+            <line x1="8" y1="14" x2="40" y2="34"/>
+            <line x1="40" y1="14" x2="8" y2="34"/>
+          </svg>
+        </div>
+        <h3>5-Axis Machining</h3>
+        <p>Simultaneous 5-axis capability for aerospace-grade parts with complex contours and undercuts in a single setup.</p>
+      </div>
+      <!-- Precision Grinding -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="20" r="14"/>
+            <line x1="10" y1="38" x2="38" y2="38"/>
+            <line x1="18" y1="34" x2="18" y2="42"/>
+            <line x1="30" y1="34" x2="30" y2="42"/>
+            <line x1="24" y1="34" x2="24" y2="42"/>
+          </svg>
+        </div>
+        <h3>Precision Grinding</h3>
+        <p>Surface and cylindrical grinding to achieve mirror finishes and sub-micron tolerances on hardened materials.</p>
+      </div>
+      <!-- CMM Inspection -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"/>
+            <polyline points="16 24 22 30 34 18"/>
+          </svg>
+        </div>
+        <h3>CMM Inspection</h3>
+        <p>Coordinate measuring machine inspection with full dimensional reporting and first article inspection (FAI) documentation.</p>
+      </div>
+      <!-- Custom Fabrication -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M28 6L42 14V20L28 28L14 20V14L28 6Z"/>
+            <path d="M6 28L20 36V42L6 34V28Z"/>
+            <path d="M28 28V42L42 34V20"/>
+            <line x1="20" y1="36" x2="28" y2="42"/>
+          </svg>
+        </div>
+        <h3>Custom Fabrication</h3>
+        <p>One-off prototypes to short-run production. We work from your prints or collaborate on design-for-manufacturability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── INDUSTRIES ───── -->
+<section id="industries" class="industries">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Industries Served</p>
+      <h2>Built for Mission-Critical Applications</h2>
+      <p>We manufacture precision parts for industries where failure is not an option.</p>
+    </div>
+    <div class="industries__grid">
+      <!-- Aerospace -->
+      <div class="industry-card">
+        <div class="industry-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 4L28 18H42L30 28L34 42L24 34L14 42L18 28L6 18H20L24 4Z"/>
+          </svg>
+        </div>
+        <h3>Aerospace</h3>
+        <p>Flight-critical components with AS9100-level quality and full traceability.</p>
+      </div>
+      <!-- Defense -->
+      <div class="industry-card">
+        <div class="industry-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 4L38 12V28C38 36 24 44 24 44C24 44 10 36 10 28V12L24 4Z"/>
+            <polyline points="18 24 22 28 30 20"/>
+          </svg>
+        </div>
+        <h3>Defense</h3>
+        <p>ITAR-compliant machining for military and defense systems with strict security protocols.</p>
+      </div>
+      <!-- Medical -->
+      <div class="industry-card">
+        <div class="industry-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="24" y1="10" x2="24" y2="38"/>
+            <line x1="10" y1="24" x2="38" y2="24"/>
+            <rect x="8" y="8" width="32" height="32" rx="6"/>
+          </svg>
+        </div>
+        <h3>Medical Devices</h3>
+        <p>Surgical instruments and implant components machined to ISO 13485 standards.</p>
+      </div>
+      <!-- Industrial -->
+      <div class="industry-card">
+        <div class="industry-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="24" r="8"/>
+            <circle cx="36" cy="24" r="6"/>
+            <circle cx="18" cy="24" r="2"/>
+            <circle cx="36" cy="24" r="2"/>
+            <line x1="26" y1="22" x2="30" y2="22"/>
+          </svg>
+        </div>
+        <h3>Industrial</h3>
+        <p>Fixtures, tooling, and production parts for manufacturing and automation systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ABOUT ───── -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__text">
+        <p class="eyebrow">About A&M Tool</p>
+        <h2>A Legacy of Precision &amp; Integrity</h2>
+        <p>Founded in Mills River, North Carolina, A&M Tool Inc. is a family-owned precision CNC machining shop built on shared values of work ethic, integrity, and uncompromising quality.</p>
+        <p>Over three decades, we've earned a strong reputation for exceeding expectations. Our team brings deep expertise across aerospace, defense, medical, and industrial markets, delivering parts that meet the tightest tolerances and most demanding specifications.</p>
+        <p>We invest in the latest CNC technology and inspection equipment because our clients depend on us to get it right the first time, every time.</p>
+      </div>
+      <div class="about__card">
+        <h3>Why A&M Tool</h3>
+        <ul>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span><strong>Tight Tolerances</strong> — Holding &plusmn;0.0001" on critical dimensions across all materials and geometries.</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span><strong>Family Values</strong> — Shared work ethic, integrity, and high standards from a close-knit team that takes pride in every part.</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span><strong>Full In-House QC</strong> — CMM inspection, first article reports, and dimensional certification on every production run.</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span><strong>Fast Turnaround</strong> — Expedited lead times without sacrificing quality or precision.</span>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span><strong>Multi-Industry Expertise</strong> — Proven track record serving aerospace, defense, medical, and industrial sectors.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CONTACT ───── -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <p class="eyebrow">Get In Touch</p>
+        <h2>Ready to Start Your Project?</h2>
+        <p>Send us your prints, specs, or questions. We'll respond within one business day with a detailed quote.</p>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <div class="contact__detail-label">Phone</div>
+              <div class="contact__detail-value">(828) 891-9990</div>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <div class="contact__detail-label">Email</div>
+              <div class="contact__detail-value">jawald@amtoolusa.com</div>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="contact__detail-label">Address</div>
+              <div class="contact__detail-value">125 School House Rd<br>Mills River, NC 28759</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact__form" onsubmit="event.preventDefault(); alert('Thank you! We will be in touch shortly.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="details">Project Details</label>
+          <textarea id="details" name="details" placeholder="Tell us about your project — materials, quantities, tolerances, timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn--primary">Submit Request <span>&rarr;</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">A&M Tool Inc.</div>
+    <div class="footer__info">
+      <span>(828) 891-9990</span>
+      <span>125 School House Rd, Mills River, NC 28759</span>
+    </div>
+    <div class="footer__copy">&copy; 2026 A&M Tool Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

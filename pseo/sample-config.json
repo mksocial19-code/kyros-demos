@@ -1,0 +1,27 @@
+{
+  "company": "Trillium Construction Company",
+  "phone": "(469) 305-6555",
+  "email": "info@trilliumtexas.com",
+  "domain": "trilliumtexas.com",
+  "services": [
+    "Commercial Concrete",
+    "Drilled Piers",
+    "Structural Concrete",
+    "Concrete Flatwork",
+    "Concrete Paving",
+    "Tilt-Wall Construction"
+  ],
+  "cities": [
+    "Dallas TX",
+    "Fort Worth TX",
+    "Arlington TX",
+    "Plano TX",
+    "Irving TX",
+    "Frisco TX",
+    "McKinney TX",
+    "Garland TX",
+    "Mesquite TX"
+  ],
+  "about": "Trillium Construction Company has delivered turnkey commercial concrete across the DFW metroplex since 2008. Self-perform model, HUB/MBE certified, bonded to $5M.",
+  "existing_pages": ["commercial-concrete", "drilled-piers", "flatwork"]
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{SERVICE}} in {{CITY}} | {{COMPANY}}</title>
+  <meta name="description" content="Looking for {{SERVICE}} in {{CITY}}? {{COMPANY}} delivers professional results on time and on budget. Call {{PHONE}} for a free quote.">
+  <link rel="canonical" href="https://{{DOMAIN}}/{{SLUG}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark: #0D0D0D;
+      --white: #FFFFFF;
+      --light: #F5F5F5;
+      --body: #6B6B6B;
+      --divider: #E0E0E0;
+      --radius-pill: 999px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--divider);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    nav .cta-pill {
+      display: inline-block;
+      padding: 0.625rem 1.5rem;
+      border: 1px solid var(--dark);
+      border-radius: var(--radius-pill);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav .cta-pill:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro {
+      font-size: 1.0625rem;
+      color: var(--body);
+      margin-bottom: 3rem;
+    }
+
+    .why h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .why ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .why ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.875rem;
+      color: var(--body);
+      font-size: 1rem;
+    }
+
+    .why ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      background: var(--dark);
+      border-radius: 50%;
+    }
+
+    .cta-section {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+    }
+
+    .cta-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section .phone {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-section .phone a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .cta-section .cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2.5rem;
+      border: 2px solid var(--white);
+      border-radius: var(--radius-pill);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-section .cta-btn:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--body);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--divider);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">{{COMPANY}}</a>
+    <a href="#cta" class="cta-pill">Get a Quote &rarr;</a>
+  </nav>
+
+  <main>
+    <h1>{{SERVICE}} in {{CITY}}</h1>
+    <div class="intro">{{GENERATED_INTRO}}</div>
+
+    <section class="why">
+      <h2>Why Choose {{COMPANY}}?</h2>
+      <ul>
+        <li>Years of proven experience delivering high-quality {{SERVICE}} projects across the region</li>
+        <li>Fully licensed, bonded, and insured for your protection and peace of mind</li>
+        <li>Local team that understands {{CITY}} building codes, soil conditions, and permitting requirements</li>
+      </ul>
+    </section>
+  </main>
+
+  <section class="cta-section" id="cta">
+    <h2>Ready to start your project?</h2>
+    <div class="phone"><a href="tel:{{PHONE}}">{{PHONE}}</a></div>
+    <a href="tel:{{PHONE}}" class="cta-btn">Call Now &rarr;</a>
+  </section>
+
+  <footer>
+    {{COMPANY}} &middot; {{PHONE}} &middot; &copy; 2026
+  </footer>
+</body>
+</html>
