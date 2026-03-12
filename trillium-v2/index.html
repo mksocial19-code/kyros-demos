@@ -1,998 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trillium Construction Company — Commercial Concrete Contractor | DFW, Texas</title>
-  <meta name="description" content="Trillium Construction Company — turnkey commercial concrete contractor serving DFW since 2008. Drilled piers, structural concrete, flatwork, foundations. HUB & MBE certified, bonded to $5M.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trillium Construction Company — Commercial Concrete, DFW</title>
+<meta name="description" content="Turnkey commercial concrete contractor in DFW — drilled piers, structural concrete, flatwork. Self-perform, HUB/MBE certified, bonded $5M. Since 2008.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#111;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+:root{
+  --dark:#0D0D0D;--white:#FFFFFF;--light:#F5F5F5;--text:#111111;
+  --body:#6B6B6B;--muted:#AAAAAA;--divider:#E0E0E0;--radius-pill:999px;
+}
+.container{width:100%;max-width:1280px;margin:0 auto;padding:0 48px}
+.eyebrow{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--body);margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;border-radius:var(--radius-pill);border:1.5px solid transparent;cursor:pointer;transition:opacity .2s,transform .2s}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn--primary{background:var(--text);color:var(--white);border-color:var(--text)}
+.btn--primary-inv{background:var(--white);color:var(--text);border-color:var(--white)}
+.btn--ghost{background:transparent;color:var(--text);border-color:var(--text)}
+.btn--ghost-inv{background:transparent;color:var(--white);border-color:var(--white)}
 
-    :root {
-      --bg-primary: #0a0e12;
-      --bg-card: #12161c;
-      --bg-card-hover: #181d25;
-      --bg-elevated: #161b22;
-      --accent: #b86d12;
-      --accent-light: #d4892a;
-      --accent-glow: rgba(184, 109, 18, 0.15);
-      --text-primary: #f0f0f0;
-      --text-secondary: #9ca3af;
-      --text-muted: #6b7280;
-      --border: rgba(255,255,255,0.06);
-      --border-accent: rgba(184, 109, 18, 0.3);
-      --radius: 12px;
-      --radius-sm: 8px;
-      --max-width: 1240px;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:#fff;border-bottom:1px solid #e8e8e8;box-shadow:0 1px 8px rgba(0,0,0,0.06)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav__brand{display:flex;align-items:center;gap:12px}
+.nav__brand svg{width:28px;height:28px;flex-shrink:0}
+.nav__brand span{font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#111}
+.nav__links{display:flex;gap:36px}
+.nav__links a{font-size:14px;font-weight:400;color:#555;transition:color .2s}
+.nav__links a:hover{color:#111}
+.nav__cta .btn{padding:10px 22px;font-size:14px}
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(5,8,12,.72),rgba(5,8,12,.82)),url("imgs/project4.jpg") center/cover no-repeat;overflow:hidden}
+.hero__content{max-width:55%;padding-top:72px}
+.hero__h1{font-size:clamp(48px,5.5vw,84px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:var(--white);margin-bottom:24px}
+.hero__line{width:56px;height:3px;background:var(--white);margin-bottom:28px}
+.hero__sub{font-size:17px;font-weight:400;line-height:1.7;color:var(--muted);max-width:480px;margin-bottom:36px}
+.hero__btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero__scroll{position:absolute;bottom:40px;right:48px;width:48px;height:48px;border:1.5px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .3s}
+.hero__scroll:hover{border-color:var(--white)}
+.hero__scroll svg{width:18px;height:18px}
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+/* STATS */
 
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+.stats{padding:120px 0}
+.stats__grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:56px;align-items:center}
+.stats__numbers{display:flex;flex-direction:column;gap:40px}
+.stat{padding-bottom:40px;border-bottom:1px solid var(--divider)}
+.stat:last-child{border-bottom:none;padding-bottom:0}
+.stat__value{font-size:clamp(48px,4vw,64px);font-weight:700;line-height:1;color:var(--text);margin-bottom:6px}
+.stat__label{font-size:14px;font-weight:400;color:var(--body)}
+.stats__photos{display:flex;flex-direction:column;gap:12px}
+.stats__photos img{width:100%;height:460px;object-fit:cover;border-radius:6px}
+.stats__text h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text);margin-bottom:20px}
+.stats__text p{font-size:16px;line-height:1.6;color:var(--body);margin-bottom:32px}
+.stats__text .btn-group{display:flex;gap:12px;flex-wrap:wrap}
 
-    /* ─── EYEBROW ─── */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 2px;
-      background: var(--accent);
-    }
+/* SERVICES */
+.services{padding:120px 0;border-top:1px solid var(--divider)}
+.services__header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:72px}
+.services__header h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text)}
+.services__header-right{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.services__header-right p{font-size:16px;line-height:1.6;color:var(--body)}
+.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{border-radius:10px;overflow:hidden;background:#fff;border:1px solid #e8e8e8;transition:box-shadow .25s,transform .25s}
+.service-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.10);transform:translateY(-3px)}
+.service-card__photo{width:100%;height:200px;object-fit:cover;display:block}
+.service-card__body{padding:24px 24px 28px}
+.service-card:nth-child(3n+2){border-left:1px solid var(--divider);border-right:1px solid var(--divider)}
+.service-card__top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:28px}
+.service-card__icon{width:36px;height:36px;color:var(--text)}
+.service-card__icon svg{width:100%;height:100%}
+.service-card__arrow{color:var(--body);transition:transform .2s}
+.service-card:hover .service-card__arrow{transform:translate(3px,-3px)}
+.service-card__arrow svg{width:18px;height:18px}
+.service-card h3{font-size:20px;font-weight:600;color:var(--text);margin-bottom:10px}
+.service-card p{font-size:15px;line-height:1.6;color:var(--body)}
 
-    /* ─── SECTION HEADING ─── */
-    .section-heading {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
+/* GALLERY */
+.gallery{padding:120px 0}
+.gallery__wrapper{background:var(--light);border-radius:20px;padding:72px 56px}
+.gallery__header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
+.gallery__header h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text)}
+.gallery__header-right{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.gallery__header-right p{font-size:16px;line-height:1.6;color:var(--body)}
+.gallery__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery__grid .gal-item{overflow:hidden;border-radius:6px;cursor:pointer;aspect-ratio:4/3;position:relative}
+.gallery__grid .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery__grid .gal-item:hover img{transform:scale(1.05)}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:4px}
+.lightbox__close{position:absolute;top:24px;right:32px;font-size:36px;color:#fff;cursor:pointer;line-height:1;background:none;border:none;padding:0}
+.lightbox__prev,.lightbox__next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:24px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox__prev{left:24px}.lightbox__next{right:24px}
 
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      max-width: 560px;
-      line-height: 1.7;
-    }
+/* PROCESS */
+.process{padding:120px 0;border-top:1px solid var(--divider)}
+.process__header{margin-bottom:72px}
+.process__header h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text)}
+.process__grid{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:stretch}
+.process__photo{border-radius:6px;overflow:hidden}
+.process__photo img{width:100%;height:100%;object-fit:cover}
+.process__steps{display:flex;flex-direction:column}
+.process-step{flex:1;display:grid;grid-template-columns:80px 1fr;gap:24px;padding:36px 0;border-bottom:1px solid var(--divider);align-items:start}
+.process-step:last-child{border-bottom:none}
+.process-step__num{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--body)}
+.process-step h3{font-size:22px;font-weight:600;color:var(--text);margin-bottom:8px}
+.process-step p{font-size:15px;line-height:1.6;color:var(--body)}
 
-    /* ─── BUTTONS ─── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 60px;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: var(--accent-light);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px rgba(184, 109, 18, 0.3);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1.5px solid rgba(255,255,255,0.2);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent-light);
-      transform: translateY(-1px);
-    }
-    .btn-arrow::after {
-      content: '\2192';
-      transition: transform var(--transition);
-    }
-    .btn-arrow:hover::after {
-      transform: translateX(4px);
-    }
+/* TESTIMONIALS */
+.testimonials{padding:120px 0;background:var(--light)}
+.testimonials__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.testimonials__left h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text);margin-bottom:20px}
+.testimonials__left p{font-size:16px;line-height:1.6;color:var(--body);margin-bottom:32px}
+.testimonials__card{position:relative}
+.testimonials__quote-mark{font-size:72px;font-weight:700;line-height:1;color:var(--divider);margin-bottom:8px;font-family:Georgia,serif}
+.testimonials__quote{font-size:20px;font-weight:400;line-height:1.7;color:var(--text);margin-bottom:28px}
+.testimonials__author{font-size:15px;font-weight:600;color:var(--text)}
+.testimonials__role{font-size:14px;color:var(--body);margin-top:2px}
+.testimonials__nav{display:flex;gap:10px;margin-top:28px}
+.testimonials__nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--divider);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,background .2s}
+.testimonials__nav button:hover{border-color:var(--text);background:var(--text)}
+.testimonials__nav button:hover svg{stroke:var(--white)}
+.testimonials__nav button svg{width:16px;height:16px;stroke:var(--text);stroke-width:2;fill:none}
 
-    /* ═══════════════════════════════
-       NAV
-    ═══════════════════════════════ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 20px 0;
-      transition: var(--transition);
-      background: transparent;
-    }
-    .nav.scrolled {
-      background: rgba(10, 14, 18, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-    .nav-logo span {
-      color: var(--accent);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: color var(--transition);
-      letter-spacing: 0.02em;
-    }
-    .nav-links a:hover { color: #fff; }
-    .nav-cta {
-      padding: 10px 24px !important;
-      font-size: 0.82rem !important;
-    }
+/* CERTIFICATIONS */
+.certs{padding:120px 0;border-top:1px solid var(--divider)}
+.certs__header{text-align:center;margin-bottom:64px}
+.certs__header h2{font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:var(--text)}
+.certs__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.cert-card{text-align:center;padding:40px 28px;border:1px solid var(--divider);border-radius:12px}
+.cert-card__icon{width:48px;height:48px;margin:0 auto 20px;color:var(--text)}
+.cert-card__icon svg{width:100%;height:100%}
+.cert-card h3{font-size:18px;font-weight:600;color:var(--text);margin-bottom:8px}
+.cert-card p{font-size:14px;line-height:1.6;color:var(--body)}
 
-    /* Mobile nav toggle */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: var(--transition);
-    }
+/* CTA */
+.cta{padding:120px 0;background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),url("imgs/new_slab_finish.jpg") center/cover no-repeat;text-align:center}
+.cta h2{font-size:clamp(36px,4vw,56px);font-weight:700;line-height:1.12;color:var(--white);margin-bottom:16px}
+.cta p{font-size:17px;color:var(--muted);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
+.cta__btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-    /* ═══════════════════════════════
-       HERO
-    ═══════════════════════════════ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(5,8,12,0.72), rgba(5,8,12,0.88)),
-                  url("imgs/new_night_crew.jpg") center/cover no-repeat;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: linear-gradient(transparent, var(--bg-primary));
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      padding-top: 120px;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 28px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 32px;
-      height: 2px;
-      background: var(--accent);
-    }
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      max-width: 520px;
-      margin-bottom: 40px;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+/* FOOTER */
+.footer{background:var(--dark);padding:80px 0 40px;color:rgba(255,255,255,.6)}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer__brand{display:flex;flex-direction:column;gap:16px}
+.footer__brand-name{display:flex;align-items:center;gap:10px}
+.footer__brand-name svg{width:24px;height:24px;flex-shrink:0}
+.footer__brand-name span{font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white)}
+.footer__brand p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.45);max-width:300px}
+.footer__col h4{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--white);margin-bottom:20px}
+.footer__col ul li{margin-bottom:12px}
+.footer__col ul li a{font-size:14px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer__col ul li a:hover{color:var(--white)}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:28px;font-size:13px;color:rgba(255,255,255,.35);text-align:center}
 
-    /* ═══════════════════════════════
-       STATS
-    ═══════════════════════════════ */
-    .stats {
-      position: relative;
-      z-index: 2;
-      padding: 0 0 100px;
-      margin-top: -40px;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .stat {
-      background: var(--bg-card);
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .stat-value {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .stat-value span { color: var(--accent); }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 500;
-    }
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .container{padding:0 32px}
+  .hero__content{max-width:70%}
+  .stats__grid{grid-template-columns:1fr;gap:48px}
+  .services__grid{grid-template-columns:repeat(2,1fr)}
+  .gallery__wrapper{padding:48px 36px}
+  .gallery__grid{grid-template-columns:repeat(2,1fr)}
+  .testimonials__grid{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
 
-    /* ═══════════════════════════════
-       SERVICES
-    ═══════════════════════════════ */
-    .services {
-      padding: 100px 0;
-    }
-    .services-header {
-      margin-bottom: 60px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px 32px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-    .service-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-accent);
-      transform: translateY(-4px);
-    }
-    .service-card:hover::before { opacity: 1; }
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      color: var(--accent);
-      font-size: 1.3rem;
-    }
-    .service-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
+  /* Nav */
+  .nav__links{display:none}
+  .nav__inner{padding:0 20px}
 
-    /* ═══════════════════════════════
-       GALLERY
-    ═══════════════════════════════ */
-    .gallery {
-      padding: 100px 0;
-    }
-    .gallery-header {
-      margin-bottom: 60px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 280px;
-      gap: 12px;
-    }
-    .gallery-item {
-      position: relative;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 40%, rgba(10,14,18,0.7));
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-    .gallery-item:hover::after {
-      opacity: 1;
-    }
-    /* Feature items span 2 columns */
-    .gallery-item--wide {
-      grid-column: span 2;
-    }
+  /* Hero — full screen, text readable */
+  .hero{min-height:100svh;background-position:center center;padding:80px 0 60px}
+  .hero__content{max-width:100%;padding-top:32px}
+  .hero__h1{font-size:42px !important}
+  .hero__sub{font-size:15px}
+  .hero__scroll{display:none}
 
-    /* ═══════════════════════════════
-       ABOUT
-    ═══════════════════════════════ */
-    .about {
-      padding: 100px 0;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .about-text .section-heading {
-      margin-bottom: 24px;
-    }
-    .about-text p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    .about-text p strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    .about-highlights {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .about-highlight {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    .about-highlight .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .about-image {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-    }
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .about-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.08);
-      pointer-events: none;
-    }
+  /* Stats — numbers row on top, photo below */
+  .stats{padding:64px 0}
+  .stats__grid{grid-template-columns:1fr;gap:40px}
+  .stats__numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .stat{padding:16px 12px;border-bottom:none;border-right:1px solid var(--divider)}
+  .stat:last-child{border-right:none}
+  .stat__value{font-size:clamp(28px,6vw,48px)}
+  .stat__label{font-size:11px}
+  .hero__btns .btn{width:auto;padding:12px 24px;font-size:14px}
+  .service-card__body p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .testimonials__quote{font-size:16px;line-height:1.6}
+  .testimonials__quote-mark{font-size:48px;line-height:1}
+  .stat__value{font-size:44px}
+  .stats__photos{order:-1}
+  .stats__photos img{height:280px}
+  .stats__text h2{font-size:28px}
 
-    /* ═══════════════════════════════
-       CERTIFICATIONS
-    ═══════════════════════════════ */
-    .certs {
-      padding: 100px 0;
-    }
-    .certs-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .certs-header .section-sub {
-      margin: 0 auto;
-    }
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .cert-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px 28px;
-      text-align: center;
-      transition: var(--transition);
-    }
-    .cert-card:hover {
-      border-color: var(--border-accent);
-      transform: translateY(-3px);
-    }
-    .cert-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.4rem;
-    }
-    .cert-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .cert-card p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+  /* Services */
+  .services{padding:64px 0}
+  .services__header{grid-template-columns:1fr;gap:16px}
+  .services__grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .service-card__photo{height:130px}
+  .service-card__body{padding:20px}
 
-    /* ═══════════════════════════════
-       CTA / CONTACT
-    ═══════════════════════════════ */
-    .cta {
-      padding: 120px 0;
-      position: relative;
-    }
-    .cta-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 80px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      top: -120px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(184, 109, 18, 0.12), transparent 70%);
-      pointer-events: none;
-    }
-    .cta-box .section-heading {
-      position: relative;
-    }
-    .cta-box .section-sub {
-      margin: 0 auto 16px;
-      position: relative;
-    }
-    .cta-contact {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 32px 0 40px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-    .cta-contact a {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color var(--transition);
-    }
-    .cta-contact a:hover { color: var(--accent-light); }
-    .cta-contact .contact-icon {
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
+  /* About */
+  .about-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .about-text{margin-bottom:32px}
+  .about-photo{height:280px !important}
 
-    /* ═══════════════════════════════
-       FOOTER
-    ═══════════════════════════════ */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 48px 0;
-    }
-    .footer .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .footer-brand {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .footer-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-    .footer-right {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+  /* Gallery */
+  .gallery{padding:64px 0}
+  .gallery__wrapper{padding:28px 16px;border-radius:12px}
+  .gallery__header{grid-template-columns:1fr;gap:16px;margin-bottom:24px}
+  .gallery__grid{grid-template-columns:repeat(2,1fr);gap:6px}
+  .gallery__grid .gal-item{aspect-ratio:1/1}
 
-    /* ═══════════════════════════════
-       SVG ICONS (inline)
-    ═══════════════════════════════ */
-    .icon {
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+  /* Hero buttons */
+  .hero__btns{flex-direction:column;gap:10px}
+  .hero__btns .btn{width:100%;text-align:center;justify-content:center}
 
-    /* ═══════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════ */
-    @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 240px; }
-      .gallery-item--wide { grid-column: span 1; }
-      .certs-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-grid { gap: 48px; }
-    }
+  /* About */
+  .about-grid{grid-template-columns:1fr 1fr !important;gap:24px !important}
+  .about-text{margin-bottom:32px}
+  .about-photo{height:260px !important}
+  div.about-grid > div:last-child{display:block}
 
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
+  /* Testimonials */
+  .testimonials{padding:64px 0}
+  .testimonials__grid{grid-template-columns:1fr;gap:32px}
+  .testimonials__card{padding:32px 24px}
 
-      /* Nav mobile */
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: var(--bg-elevated);
-        flex-direction: column;
-        justify-content: center;
-        gap: 28px;
-        padding: 60px 40px;
-        transition: right var(--transition);
-        border-left: 1px solid var(--border);
-      }
-      .nav-links.open { right: 0; }
-      .nav-toggle { display: flex; }
-      .nav-links a { font-size: 1rem; }
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr !important;gap:24px !important}
+  .contact-map{height:220px !important}
+  .contact-cards{margin-bottom:24px}
+  .contact-map{height:260px !important;width:100%}
 
-      .hero { min-height: 90vh; }
-      .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
-      .hero-content { padding-top: 100px; }
-
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-image { aspect-ratio: 16/10; }
-      .certs-grid { grid-template-columns: 1fr 1fr; }
-
-      .cta-box { padding: 60px 28px; }
-      .cta-contact { flex-direction: column; align-items: center; gap: 16px; }
-
-      .footer .container { flex-direction: column; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .stat { padding: 28px 20px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
-      .hero-buttons { flex-direction: column; }
-      .hero-buttons .btn { width: 100%; justify-content: center; }
-      .certs-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  /* Footer */
+  .footer{padding:48px 0 32px}
+  .about-text{margin-bottom:0}
+  .about-text h2{font-size:22px !important;margin-bottom:12px !important}
+  .about-text p{font-size:13px !important;margin-bottom:12px !important}
+  .about-text ul{display:none}
+  .about-text > div{display:none}
+  section.about img{height:100% !important;min-height:280px}
+  section.about{padding:80px 0 60px !important}
+  section.about img{height:220px !important}
+  .footer__grid{grid-template-columns:1fr;gap:28px}
+  .stats{padding:60px 0}.services{padding:60px 0}.gallery{padding:60px 0}.testimonials{padding:60px 0}
+}
+</style>
 </head>
 <body>
 
-  <!-- ═══ NAV ═══ -->
-  <nav class="nav" id="nav">
-    <div class="container">
-      <a href="#" class="nav-logo">TRILLIUM<span>.</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#certs">Certifications</a></li>
-        <li><a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__brand">
+      <img src="imgs/Logo.png" alt="Trillium Construction" style="height:36px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+      <span style="display:none">Trillium Construction</span>
+    </a>
+    <div class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
+    <div class="nav__cta">
+      
+    </div>
+  </div>
+</nav>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Commercial Concrete &bull; DFW</div>
-        <h1>Built for the<br><em>Big Pour.</em></h1>
-        <p class="hero-sub">Turnkey commercial concrete across the Dallas-Fort Worth metroplex. From drilled piers to finished slabs &mdash; one crew, one standard, zero excuses.</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary btn-arrow">Request a Quote</a>
-          <a href="#gallery" class="btn btn-outline">View Our Work</a>
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <h1 class="hero__h1">Built for<br>the Big Pour</h1>
+      <div class="hero__line"></div>
+      <p class="hero__sub">Turnkey commercial concrete for DFW's most demanding projects. Self-perform. No excuses.</p>
+      <div class="hero__btns">
+        
+        <a href="#projects" class="btn btn--ghost-inv">Our Work</a>
+      </div>
+    </div>
+  </div>
+  <a href="#stats" class="hero__scroll" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+    </svg>
+  </a>
+</section>
+
+<section id="stats" class="stats">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__numbers">
+        <div class="stat">
+          <div class="stat__value">15+</div>
+          <div class="stat__label">Years in Commercial Concrete</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">500+</div>
+          <div class="stat__label">Projects Completed Across DFW</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">$5M</div>
+          <div class="stat__label">Bonded Capacity</div>
+        </div>
+      </div>
+      <div class="stats__photos">
+        <img src="imgs/stats_crew.jpg" alt="Trillium crew actively working on commercial concrete pour" loading="lazy">
+      </div>
+      <div class="stats__text">
+        <h2>Self-Perform.<br>Every Pour.</h2>
+        <p>Since 2008, Trillium Construction has delivered turnkey commercial concrete across the DFW metroplex. Our self-perform model means every crew member is ours &mdash; no subcontracting, no finger-pointing, no surprises. From drilled piers to final finish, we own every phase.</p>
+        <div class="btn-group">
+          <a href="#services" class="btn btn--primary">Our Services &rarr;</a>
+          
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ STATS ═══ -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value">15<span>+</span></div>
-          <div class="stat-label">Years in DFW</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">500<span>+</span></div>
-          <div class="stat-label">Projects Completed</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span>$</span>5M</div>
-          <div class="stat-label">Bonding Capacity</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">100<span>%</span></div>
-          <div class="stat-label">Self-Perform</div>
-        </div>
+<section id="services" class="services">
+  <div class="container">
+    <div class="services__header">
+      <h2>Complete Commercial<br>Concrete Services</h2>
+      <div class="services__header-right">
+        <p>Full-scope concrete solutions for general contractors and project owners &mdash; from deep foundations to finished slabs. Every service self-performed by our own crews.</p>
+        
       </div>
     </div>
-  </section>
-
-  <!-- ═══ SERVICES ═══ -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-header">
-        <div class="eyebrow">What We Do</div>
-        <h2 class="section-heading">Full-Scope Concrete<br>Solutions</h2>
-        <p class="section-sub">Every phase of commercial concrete &mdash; self-performed by our own crews. No subs, no gaps, no finger-pointing.</p>
-      </div>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17"/></svg>
-          </div>
-          <h3>Drilled Piers</h3>
-          <p>Deep foundation systems engineered for DFW's expansive clay soils. Straight-shaft and belled piers for commercial structures of every scale.</p>
+    <div class="services__grid">
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_slab.jpg" alt="Commercial slab on grade pour" loading="lazy">
+        <div class="service-card__body">
+          <h3>Slab on Grade</h3>
+          <p>Precisely formed and poured concrete slabs engineered for warehouses, retail buildings, and light industrial applications.</p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
-          </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_structural.jpg" alt="Structural concrete elevated deck pour" loading="lazy">
+        <div class="service-card__body">
           <h3>Structural Concrete</h3>
-          <p>Grade beams, columns, elevated decks, and load-bearing walls. Precision forming and placement for multi-story commercial projects.</p>
+          <p>Tilt-wall panels, columns, grade beams, and elevated decks — structural work executed to IBC standards on every project.</p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="12" width="20" height="8" rx="1"/><path d="M6 12V8M12 12V6M18 12V8"/></svg>
-          </div>
-          <h3>Flatwork &amp; Slabs</h3>
-          <p>Warehouse slabs, retail floors, and industrial pads. Laser-guided screeding, fiber reinforcement, and high-tolerance finishes.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-5 7 5v14"/><path d="M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Foundation Systems</h3>
-          <p>Complete foundation packages from excavation through pour. Spread footings, mat foundations, and pier-and-beam systems built to spec.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M4 20h16M4 20V10M20 20V10M4 10l8-8 8 8"/><path d="M9 14h6v6H9z"/></svg>
-          </div>
-          <h3>Sidewalks &amp; Hardscape</h3>
-          <p>ADA-compliant sidewalks, curb-and-gutter, ramps, and exterior concrete. Durable finishes that hold up under DFW's extreme weather.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94L6.73 20.2a2 2 0 01-2.83-2.83l6.73-6.73A6 6 0 016.3 2.63l3.77 3.77"/></svg>
-          </div>
-          <h3>Commercial Remodeling</h3>
-          <p>Concrete removal, structural modifications, and interior slab work for tenant buildouts, renovations, and adaptive reuse projects.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ GALLERY ═══ -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="gallery-header">
-        <div class="eyebrow">Our Work</div>
-        <h2 class="section-heading">Built to Perform</h2>
-        <p class="section-sub">Commercial concrete projects across the DFW metroplex &mdash; from ground-breaking to final finish.</p>
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_piers.jpg" alt="Drilled pier foundation rebar cages" loading="lazy">
+        <div class="service-card__body">
+          <h3>Pier Foundations</h3>
+          <p>Drilled pier and caisson systems for challenging soils and heavy structural loads throughout the DFW Metroplex.</p>
+        </div>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item gallery-item--wide">
-          <img src="imgs/new_crew_pour.jpg" alt="Concrete crew placing a commercial pour" loading="lazy">
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_paving.jpg" alt="Commercial paving warehouse floor prep" loading="lazy">
+        <div class="service-card__body">
+          <h3>Commercial Paving</h3>
+          <p>High-load concrete paving for parking lots, drives, and heavy-traffic areas built for DFW's climate and commercial demands.</p>
         </div>
-        <div class="gallery-item">
-          <img src="imgs/b2_crane_rebar.jpg" alt="Crane lifting rebar for structural concrete" loading="lazy">
+      </div>
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_sidewalks.jpg" alt="Sidewalk and ADA concrete formwork" loading="lazy">
+        <div class="service-card__body">
+          <h3>Sidewalks &amp; ADA</h3>
+          <p>ADA-compliant walkways, curb ramps, and accessible routes designed and built to federal and municipal standards.</p>
         </div>
-        <div class="gallery-item">
-          <img src="imgs/b2_rebar_beam.jpg" alt="Rebar beam assembly on commercial site" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/new_slab_finish.jpg" alt="Finishing a commercial concrete slab" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/IMG_2324.jpg" alt="Commercial concrete project in progress" loading="lazy">
-        </div>
-        <div class="gallery-item gallery-item--wide">
-          <img src="imgs/b2_team_photo.jpg" alt="Trillium Construction crew on site" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/project1.jpg" alt="Completed commercial foundation" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/project2.jpg" alt="Structural concrete pour" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/b3_shop_team.jpg" alt="Trillium shop and crew" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="imgs/IMG_2325.jpg" alt="Commercial concrete project detail" loading="lazy">
+      </div>
+      <div class="service-card">
+        <img class="service-card__photo" src="imgs/svc_flatwork.jpg" alt="Parking garage flatwork slab finishing" loading="lazy">
+        <div class="service-card__body">
+          <h3>Flatwork &amp; Finishing</h3>
+          <p>Warehouse floors, loading docks, post-tension slabs, and parking structures finished to spec with laser-guided screeding.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ ABOUT ═══ -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <div class="eyebrow">About Trillium</div>
-          <h2 class="section-heading">One Crew.<br>One Standard.</h2>
-          <p>Since 2008, Trillium Construction Company has been the DFW metroplex's go-to for <strong>turnkey commercial concrete</strong>. We don't subcontract our core work &mdash; every pier, every pour, every finish is executed by our own trained crews.</p>
-          <p>That self-perform model means <strong>tighter schedules, cleaner sites, and zero finger-pointing</strong>. When general contractors and project owners need concrete they can count on, they call Trillium.</p>
-          <p>Based in Garland, Texas, we handle projects ranging from <strong>$500K to $2.5M</strong> across DFW &mdash; retail, industrial, municipal, and multi-family.</p>
-          <div class="about-highlights">
-            <div class="about-highlight"><span class="dot"></span> Self-perform model</div>
-            <div class="about-highlight"><span class="dot"></span> Garland, TX based</div>
-            <div class="about-highlight"><span class="dot"></span> HUB & MBE certified</div>
-            <div class="about-highlight"><span class="dot"></span> Bonded to $5M</div>
-          </div>
+<section class="about" style="padding:120px 0;background:#fff">
+  <div class="container">
+    <div class="about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div class="about-text">
+        <p class="eyebrow">About Trillium</p>
+        <h2 style="font-size:clamp(32px,3vw,44px);font-weight:700;line-height:1.15;color:#111;margin-bottom:20px">Built on Hard Work.<br>Standing Since 2008.</h2>
+        <div style="width:48px;height:3px;background:#111;margin-bottom:28px"></div>
+        <p style="font-size:16px;line-height:1.7;color:#6b6b6b;margin-bottom:24px">Founded by Jeff Balette in Garland, Texas, Trillium has spent 16 years earning the repeat business of general contractors and owners across the DFW Metroplex. We self-perform, we stay on site, and we finish what we start.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#6b6b6b"><span style="color:#111;font-weight:600;flex-shrink:0">&mdash;</span> HUB &amp; MBE Certified &mdash; meets public and private diversity goals</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#6b6b6b"><span style="color:#111;font-weight:600;flex-shrink:0">&mdash;</span> Bondable up to $5M &mdash; financial depth to mobilize and deliver</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#6b6b6b"><span style="color:#111;font-weight:600;flex-shrink:0">&mdash;</span> Typical project scope: $500,000 to $2,500,000</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:#6b6b6b"><span style="color:#111;font-weight:600;flex-shrink:0">&mdash;</span> Serving the Dallas&ndash;Fort Worth Metroplex since 2008</li>
+        </ul>
+        <div style="border-top:1px solid #e0e0e0;padding-top:24px">
+          <p style="font-size:15px;font-weight:700;color:#111;margin:0">Jeff Balette, Founder &amp; Principal</p>
         </div>
-        <div class="about-image">
-          <img src="imgs/b2_trillium_wall.jpg" alt="Trillium Construction branding on site" loading="lazy">
+      </div>
+      <div>
+        <img class="about-photo" src="imgs/b3_shop_team.jpg" alt="Jeff Balette and the Trillium Construction team" style="width:100%;height:420px;object-fit:cover;border-radius:8px" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="gallery">
+  <div class="container">
+    <div class="gallery__wrapper">
+      <div class="gallery__header">
+        <div>
+          <p class="eyebrow">Our Work</p>
+          <h2>Built to Perform</h2>
+        </div>
+        <div class="gallery__header-right">
+          <p>A selection of commercial concrete projects delivered across the DFW metroplex &mdash; on time, on budget, built to last.</p>
+          
+        </div>
+      </div>
+      <div class="gallery__grid" id="galGrid">
+        <div class="gal-item" onclick="openLightbox(0)"><img src="imgs/project1.jpg" alt="Night pour — commercial slab" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(1)"><img src="imgs/gal_1.jpg" alt="Commercial concrete project" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(2)"><img src="imgs/gal_2.jpg" alt="Structural concrete work" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(3)"><img src="imgs/gal_3.jpg" alt="DFW commercial project" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(4)"><img src="imgs/gal_4.jpg" alt="Foundation concrete" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(5)"><img src="imgs/gal_5.jpg" alt="Crew on site" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(6)"><img src="imgs/gal_6.jpg" alt="Concrete pour DFW" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(7)"><img src="imgs/gal_7.jpg" alt="Commercial flatwork" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(8)"><img src="imgs/gal_8.jpg" alt="Slab on grade pour" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(9)"><img src="imgs/gal_9.jpg" alt="Sidewalk and site work" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(10)"><img src="imgs/gal_10.jpg" alt="Trillium crew working" loading="lazy"></div>
+        <div class="gal-item" onclick="openLightbox(11)"><img src="imgs/gal_11.jpg" alt="Commercial concrete DFW" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox__prev" onclick="shiftLightbox(-1)">&#8592;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox__next" onclick="shiftLightbox(1)">&#8594;</button>
+</div>
+<script>
+const galImgs = ['imgs/project1.jpg','imgs/gal_1.jpg','imgs/gal_2.jpg','imgs/gal_3.jpg','imgs/gal_4.jpg','imgs/gal_5.jpg','imgs/gal_6.jpg','imgs/gal_7.jpg','imgs/gal_8.jpg','imgs/gal_9.jpg','imgs/gal_10.jpg','imgs/gal_11.jpg'];
+let curIdx = 0;
+function openLightbox(i){curIdx=i;document.getElementById('lightboxImg').src=galImgs[i];document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function shiftLightbox(dir){curIdx=(curIdx+dir+galImgs.length)%galImgs.length;document.getElementById('lightboxImg').src=galImgs[curIdx];}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')shiftLightbox(-1);if(e.key==='ArrowRight')shiftLightbox(1);});
+</script>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials__grid">
+      <div class="testimonials__left">
+        <p class="eyebrow">Testimonials</p>
+        <h2>Trusted by<br>DFW's Best</h2>
+        <p>General contractors and project owners count on Trillium for the pours that can't slip.</p>
+        
+      </div>
+      <div class="testimonials__card" id="testimonialCard">
+        <div class="testimonials__quote-mark">&ldquo;</div>
+        <p class="testimonials__quote" id="testimonialQuote">We've used Trillium on four consecutive projects and they haven't missed a pour date yet. Their crews show up early, they communicate schedule changes before they become problems, and the finished product speaks for itself. In a market where concrete subs are constantly juggling, these guys are locked in.</p>
+        <div class="testimonials__author" id="testimonialAuthor">Marcus Jennings</div>
+        <div class="testimonials__role" id="testimonialRole">Sr. Project Manager &mdash; Balfour Beatty, Dallas</div>
+        <div class="testimonials__nav">
+          <button onclick="prevTestimonial()" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button onclick="nextTestimonial()" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ CERTIFICATIONS ═══ -->
-  <section class="certs" id="certs">
-    <div class="container">
-      <div class="certs-header">
-        <div class="eyebrow">Credentials</div>
-        <h2 class="section-heading">Certified &amp; Qualified</h2>
-        <p class="section-sub">The certifications and capacity to handle your next commercial concrete project with confidence.</p>
+<section id="contact" style="padding:120px 0;background:#fff">
+  <div class="container">
+    <h2 style="font-size:clamp(36px,4vw,56px);font-weight:700;color:#111;margin-bottom:56px">Let's Build Something<br>Together</h2>
+    <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div class="contact-cards" style="display:flex;flex-direction:column;gap:16px">
+        <a href="tel:+14643006148" style="display:block;border:1px solid #e0e0e0;border-radius:8px;padding:24px 28px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:8px">Call Us</div>
+          <div style="font-size:20px;font-weight:700;color:#111">(464) 300-6148</div>
+        </a>
+        <a href="mailto:info@trilliumtexas.com" style="display:block;border:1px solid #e0e0e0;border-radius:8px;padding:24px 28px;text-decoration:none;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:8px">Email Us</div>
+          <div style="font-size:18px;font-weight:700;color:#111">info@trilliumtexas.com</div>
+        </a>
+        <div style="border:1px solid #e0e0e0;border-radius:8px;padding:24px 28px">
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:8px">Our Office</div>
+          <div style="font-size:18px;font-weight:700;color:#111;line-height:1.5">406 Forest Gate Drive<br>Garland, Texas 75042</div>
+        </div>
       </div>
-      <div class="certs-grid">
-
-        <div class="cert-card">
-          <div class="cert-icon">
-            <svg class="icon" viewBox="0 0 24 24" style="color:var(--accent)"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
-          </div>
-          <h3>HUB Certified</h3>
-          <p>Historically Underutilized Business certified by the Texas Comptroller of Public Accounts.</p>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon">
-            <svg class="icon" viewBox="0 0 24 24" style="color:var(--accent)"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0114 0v2"/><path d="M17 11l2 2 4-4"/></svg>
-          </div>
-          <h3>MBE Certified</h3>
-          <p>Minority Business Enterprise certified by the State of Texas for public and private sector projects.</p>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon">
-            <svg class="icon" viewBox="0 0 24 24" style="color:var(--accent)"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M6 14h4"/></svg>
-          </div>
-          <h3>Bonded to $5M</h3>
-          <p>Fully bonded with capacity up to $5 million for commercial and municipal concrete projects.</p>
-        </div>
-
-        <div class="cert-card">
-          <div class="cert-icon">
-            <svg class="icon" viewBox="0 0 24 24" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3>15+ Years</h3>
-          <p>Operating continuously since 2008 with a proven track record across the Dallas-Fort Worth metroplex.</p>
-        </div>
-
+      <div class="contact-map" style="border-radius:10px;overflow:hidden;height:380px">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.0!2d-96.6537!3d32.9127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1e7a5a5a5a5a%3A0x0!2s406+Forest+Gate+Dr%2C+Garland%2C+TX+75042!5e0!3m2!1sen!2sus!4v1"
+          width="100%" height="100%" style="border:0;display:block" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ═══ CONTACT / CTA ═══ -->
-  <section class="cta" id="contact">
-    <div class="container">
-      <div class="cta-box">
-        <div class="eyebrow" style="justify-content:center">Let's Talk</div>
-        <h2 class="section-heading">Ready to Build?</h2>
-        <p class="section-sub">Whether you're bidding a project or breaking ground next week, we're ready to talk scope, schedule, and budget.</p>
-        <div class="cta-contact">
-          <a href="tel:+14695551234">
-            <span class="contact-icon">
-              <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.34a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0122 16.92z"/></svg>
-            </span>
-            (469) 555-1234
-          </a>
-          <a href="mailto:info@trilliumconcrete.com">
-            <span class="contact-icon">
-              <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </span>
-            info@trilliumconcrete.com
-          </a>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">
+          <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="12" width="10" height="17"/><rect x="18" y="5" width="10" height="24"/>
+            <line x1="7" y1="16" x2="11" y2="16"/><line x1="7" y1="20" x2="11" y2="20"/><line x1="7" y1="24" x2="11" y2="24"/>
+            <line x1="21" y1="9" x2="25" y2="9"/><line x1="21" y1="13" x2="25" y2="13"/><line x1="21" y1="17" x2="25" y2="17"/><line x1="21" y1="21" x2="25" y2="21"/><line x1="21" y1="25" x2="25" y2="25"/>
+          </svg>
+          <span>Trillium Construction</span>
         </div>
-        <a href="mailto:info@trilliumconcrete.com?subject=Quote%20Request" class="btn btn-primary btn-arrow" style="position:relative">Request a Quote</a>
+        <p>Turnkey commercial concrete contractor serving the DFW metroplex since 2008. Self-perform. No excuses.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Drilled Piers</a></li>
+          <li><a href="#services">Structural Concrete</a></li>
+          <li><a href="#services">Flatwork &amp; Slabs</a></li>
+          <li><a href="#services">Foundation Systems</a></li>
+          <li><a href="#services">Retaining Walls</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#stats">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+14643006148">(464) 300-6148</a></li>
+          <li><a href="mailto:info@trilliumtexas.com">info@trilliumtexas.com</a></li>
+          <li><a href="#">Garland, TX 75040</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+    <div class="footer__bottom">&copy; 2026 Trillium Construction Company. All rights reserved.</div>
+  </div>
+</footer>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-left">
-        <div class="footer-brand">Trillium Construction Company, LLC</div>
-        <div class="footer-meta">Garland, Texas &bull; HUB &bull; MBE &bull; Bonded to $5M</div>
-      </div>
-      <div class="footer-right">
-        &copy; 2024 Trillium Construction Company. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <!-- ═══ MINIMAL JS ═══ -->
-  <script>
-    // Scroll-aware nav
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
-    // Mobile nav toggle
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-    });
-    // Close mobile nav on link click
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
-    });
-  </script>
-
+<script>
+const testimonials=[
+  {quote:"We\u2019ve used Trillium on four consecutive projects and they haven\u2019t missed a pour date yet. Their crews show up early, they communicate schedule changes before they become problems, and the finished product speaks for itself. In a market where concrete subs are constantly juggling, these guys are locked in.",author:"Marcus Jennings",role:"Sr. Project Manager \u2014 Balfour Beatty, Dallas"},
+  {quote:"Trillium handled the entire concrete scope on our 120,000 SF distribution center \u2014 piers, grade beams, slab on grade, dock pads, all of it. One contract, one crew, zero change orders on their end. That almost never happens. They\u2019ll be on our next bid list without question.",author:"Rachel Dominguez",role:"VP of Preconstruction \u2014 Jordan Foster Construction, Fort Worth"}
+];
+let cur=0;
+function show(i){const t=testimonials[i];document.getElementById('testimonialQuote').textContent=t.quote;document.getElementById('testimonialAuthor').textContent=t.author;document.getElementById('testimonialRole').textContent=t.role}
+function nextTestimonial(){cur=(cur+1)%testimonials.length;show(cur)}
+function prevTestimonial(){cur=(cur-1+testimonials.length)%testimonials.length;show(cur)}
+</script>
 </body>
 </html>
